@@ -19,7 +19,7 @@ jobs:
         with:
           flutter-version: '3.0.1'
       - run: flutter pub get
-      # - run: flutter test
+      # - run: flutter test //
       # - run: flutter build apk --debug --split-per-abi
       - run: flutter build apk --split-per-abi
       # - run: flutter build apk --release
@@ -28,5 +28,5 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/release/*"
-          tag: ${{ steps.get_version.outputs.VERSION }}
+          tag: v1.0.${{ github.run_number }}
           token: ${{ secrets.TOKEN }}
